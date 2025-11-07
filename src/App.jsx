@@ -3,6 +3,8 @@ import About from "./components/About";
 import Hero from "./components/Hero";
 import { ScrollSmoother, ScrollTrigger } from "gsap/all";
 import { useGSAP } from "@gsap/react";
+import Navbar from "./components/Navbar";
+import Features from "./components/Features";
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
@@ -17,9 +19,10 @@ function App() {
   return (
     <main className="relative min-h-screen w-screen overflow-x-hidden">
       <div>
+        <Navbar />
         <Hero />
         <About />
-        <section className="z-0 min-h-screen bg-blue-500"></section>
+        <Features />
       </div>
     </main>
   );

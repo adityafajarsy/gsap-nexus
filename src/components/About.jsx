@@ -1,5 +1,6 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import AnimatedTitle from "./AnimatedTitle";
 
 export default function About() {
   useGSAP(() => {
@@ -14,10 +15,10 @@ export default function About() {
       },
     });
 
-    clipAnimation.to('.mask-clip-path', {
-        width: '100vw',
-        height: '100vh',
-    })
+    clipAnimation.to(".mask-clip-path", {
+      width: "100vw",
+      height: "100vh",
+    });
   });
 
   return (
@@ -27,9 +28,12 @@ export default function About() {
           Welcome to Zentry
         </h2>
 
-        <div className="mt-5 text-center text-4xl uppercase leading-[0.8] md:text-[6rem]">
-          Disc<b>o</b>ver the world's <br /> largest shared <b>a</b>dventure
-        </div>
+        <AnimatedTitle
+          title={
+            "Disc<b>o</b>ver the world's <br /> largest shared <b>a</b>dventure"
+          }
+          containerClass={"mt-5 !text-black text-center"}
+        />
 
         <div className="about-subtext">
           <p>The Game of Games begins-your life, now an epic MMORPG</p>
