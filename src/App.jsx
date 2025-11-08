@@ -5,6 +5,9 @@ import { ScrollSmoother, ScrollTrigger } from "gsap/all";
 import { useGSAP } from "@gsap/react";
 import Navbar from "./components/Navbar";
 import Features from "./components/Features";
+import Story from "./components/Story";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
@@ -23,6 +26,9 @@ function App() {
         <Hero />
         <About />
         <Features />
+        <Story />
+        <Contact />
+        <Footer />
       </div>
     </main>
   );
