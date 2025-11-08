@@ -7,7 +7,7 @@ import gsap from "gsap";
 const navItems = ["Nexus", "Vault", "Prologue", "About", "Contact"];
 
 const Navbar = () => {
-  const [isAudioPlaying, setIsAudioPlaying] = useState(false);
+  const [isAudioPlaying, setIsAudioPlaying] = useState(true);
   const [isIndicatorActive, setIsIndicatorActive] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isNavVisible, setIsNavVisible] = useState(true);
@@ -23,15 +23,12 @@ const Navbar = () => {
     const nav = navContainerRef.current;
 
     if (currentScrollY < 50) {
-      // Masih di top, tampil dan transparan
       setIsNavVisible(true);
       nav.classList.remove("floating-nav");
     } else if (currentScrollY > lastScrollY) {
-      // Scroll ke bawah -> sembunyikan
       setIsNavVisible(false);
       nav.classList.add("floating-nav");
     } else if (currentScrollY < lastScrollY) {
-      // Scroll ke atas -> tampilkan
       setIsNavVisible(true);
       nav.classList.add("floating-nav");
     }
@@ -55,9 +52,9 @@ const Navbar = () => {
 
   useEffect(() => {
     if (isAudioPlaying) {
-      audioElementRef.current.play();
-    } else {
       audioElementRef.current.pause();
+    } else {
+      audioElementRef.current.play();
     }
   }, [isAudioPlaying]);
 
